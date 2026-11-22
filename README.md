@@ -1,100 +1,74 @@
-# GOC-Base-Repo-Template
+# Angels Auto Repair
 
-GOC-Base-Repo-Template is the Lipford-Dutch project kickoff template for new
-repositories. It packages the Generals of Chaos baseline operating model,
-documentation standards, GitHub automation, triage discipline, security posture,
-and release governance that every new codebase should inherit before
-product-specific code lands.
+Angels Auto Repair is the Carolina Beach shop at 306 N Lake Park Blvd.
+This repository is the customer website, the print-ready brand kit, and the
+GoC operating baseline for the project.
 
-The template is intentionally product-neutral. It does not contain application
-runtime code, secrets, vendor-specific credentials, or project-specific metrics.
+The final logo plate is the source of truth: navy gear, orange open wrench,
+front-view car, corner slash, split rule, and the Carolina Beach pin.
 
-## What This Template Provides
+## Sites
 
-- Repository governance: contribution, security, support, code of conduct, and
-  decision-record guidance.
-- GitHub operations: issue templates, pull request template, Dependabot,
-  Dependency Review, CodeQL, Scorecard, Pages deployment, and documentation CI.
-- Documentation system: MkDocs Material structure with kickoff, standards,
-  security, release, operations, and General Triaging Chaos playbooks.
-- Project readiness assets: ADR, runbook, release checklist, security exception,
-  and operational readiness templates.
-- Quality defaults: editor settings, Git attributes, markdown/yaml linting, and
-  pre-commit hooks.
-- Social and launch assets: reusable social preview artwork in
-  `docs/assets/social-preview.png` and `docs/assets/social-preview.svg`.
+| Surface | Where it lives |
+| --- | --- |
+| Customer website | TanStack Start app in this repository |
+| Shop URL | <https://angels-auto.cbgoc-cloud.top/> |
+| GitHub Pages | Docs, brand rules, and the agent handoff |
+| Pages URL | <https://willyd61.github.io/AngelsAutoRepairNC/> |
 
-## Kickoff Flow
+GitHub Pages publishes the MkDocs site. It does not run the shop application.
+The shop app needs a Node host.
 
-1. Create a new repository from this template.
-2. Replace placeholder ownership in `CODEOWNERS`, `SECURITY.md`, and
-   `docs/ownership.md`.
-3. Enable GitHub Pages from GitHub Actions.
-4. Enable repository security features:
-   - Dependabot alerts and security updates
-   - Secret scanning and push protection
-   - Code scanning
-   - Branch protections for `main`
-5. Fill out the kickoff checklist in `docs/kickoff-checklist.md`.
-6. Create the first ADR from `templates/adr.md`.
-7. Open the first product PR with the included pull request template.
+## Brand, fast
 
-## Repository Layout
+- Plate: `public/brand/angels-final.svg`
+- Header: `public/brand/angels-header.svg` and `angels-header-reverse.svg`
+- Cards, quarter flyer, 4×6 postcard, coaster: `public/brand/` and `branding/print/`
+- QR target: `https://angels-auto.cbgoc-cloud.top/`
+- Rebuild vectors: `python branding/build_brand.py`
 
-```text
-.
-|-- .github/                 # GitHub workflows, templates, and governance
-|-- docs/                    # MkDocs source documentation
-|-- templates/               # Reusable project artifacts
-|-- reports/                 # Audit and readiness reports
-|-- mkdocs.yml               # Documentation site configuration
-|-- SECURITY.md              # Vulnerability reporting policy
-|-- CONTRIBUTING.md          # Contribution and review standards
-|-- GOVERNANCE.md            # Ownership and decision model
-|-- SUPPORT.md               # Support and escalation expectations
-|-- AGENTS.md                # AI agent operating instructions
+Colors: navy `#0B2347`, spark `#F15A22`, silver `#D5DCE6`, paper `#FFFFFF`.
+
+## Run the shop site
+
+```bash
+npm install
+npm run dev
 ```
 
-## General Triaging Chaos Operating Model
+```bash
+npm run typecheck
+npm run build
+```
 
-This template keeps chaos useful by making work visible, classifiable, and
-reviewable:
-
-- Capture ambiguity as issues, ADRs, or risks instead of burying it in chat.
-- Treat CI as the minimum bar, not the final review.
-- Keep repo automation boring, repeatable, and least-privileged.
-- Prefer small, reversible changes with explicit acceptance criteria.
-- Document the operational path before production traffic exists.
-
-## Local Documentation Preview
+## Documentation
 
 ```bash
 python -m pip install -r requirements-docs.txt
 mkdocs serve
 ```
 
-Build the static documentation site:
-
 ```bash
 mkdocs build --strict
 ```
 
-## Social Preview
+Start with the [agent handoff](docs/agent-handoff.md) if you are picking the
+work up cold. Brand rules are in [docs/brand.md](docs/brand.md). The ten card
+ideas are in [docs/print-kit.md](docs/print-kit.md).
 
-Use `docs/assets/social-preview.png` as the repository Social Preview image in
-GitHub settings. The editable source lives at `docs/assets/social-preview.svg`.
-Keep the preview generic so repositories created from this template can reuse or
-adapt it without leaking project-specific context.
+## GoC baseline
 
-## Template Boundaries
+This repo was specialized from GOC-Base-Repo-Template. Keep the baseline:
 
-This repository should stay generic. Do not add:
+- Pull requests, not direct pushes, once branch protection is on.
+- Least-privilege Actions permissions.
+- No secrets, customer records, or license keys in git.
+- `mkdocs build --strict` stays green.
+- Decisions that change brand, hosting, or data handling get an ADR in
+  `docs/decisions/`.
 
-- production secrets, license keys, or encrypted credentials
-- application-specific business logic
-- customer data or environment-specific configuration
-- tool output that cannot be reused by future repositories
-- large binaries or installable executables
+## Owners
 
-Use `docs/examples.md` for generic examples and move product-specific content to
-the repository created from this template.
+- Repository and brand: @willyd61
+- Shop: Angels Auto Repair, Carolina Beach, NC
+- Phone on the site and the cards: (910) 636-3053
