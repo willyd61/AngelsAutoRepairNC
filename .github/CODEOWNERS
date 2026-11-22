@@ -1,6 +1,8 @@
-# Replace these placeholders during project kickoff.
-* @Lipford-Dutch/repository-owners
+# Angels Auto Repair. Review requests land on the repository owner.
+* @willyd61
 
-/.github/ @Lipford-Dutch/platform-owners
-/docs/ @Lipford-Dutch/documentation-owners
-/SECURITY.md @Lipford-Dutch/security-owners
+/.github/ @willyd61
+/docs/ @willyd61
+/SECURITY.md @willyd61
+/public/brand/ @willyd61
+/branding/ @willyd61

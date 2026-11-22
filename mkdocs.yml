@@ -1,11 +1,13 @@
 ---
-site_name: GOC-Base-Repo-Template
-site_description: Lipford-Dutch reusable repository kickoff template.
-site_url: https://lipford-dutch.github.io/GOC-Base-Repo-Template/
-repo_url: https://github.com/Lipford-Dutch/GOC-Base-Repo-Template
-repo_name: Lipford-Dutch/GOC-Base-Repo-Template
+site_name: Angels Auto Repair
+site_description: Carolina Beach shop site, brand kit, and GoC operating docs.
+site_url: https://willyd61.github.io/AngelsAutoRepairNC/
+repo_url: https://github.com/willyd61/AngelsAutoRepairNC
+repo_name: willyd61/AngelsAutoRepairNC
 theme:
   name: material
+  logo: assets/mark.svg
+  favicon: assets/favicon.svg
   features:
     - navigation.instant
     - navigation.sections
@@ -14,18 +16,20 @@ theme:
     - search.highlight
     - toc.follow
   palette:
-    - scheme: slate
-      primary: black
-      accent: cyan
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
     - scheme: default
-      primary: black
-      accent: cyan
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+extra_css:
+  - stylesheets/brand.css
 markdown_extensions:
   - admonition
   - attr_list
@@ -36,6 +40,12 @@ markdown_extensions:
       custom_checkbox: true
 nav:
   - Home: index.md
+  - Shop:
+      - Brand: brand.md
+      - Website: website.md
+      - Print kit: print-kit.md
+      - Agent handoff: agent-handoff.md
+      - Final logo: decisions/0001-final-logo.md
   - Kickoff:
       - Checklist: kickoff-checklist.md
       - Project Intake: project-intake.md

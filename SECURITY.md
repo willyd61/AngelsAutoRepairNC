@@ -1,9 +1,9 @@
 # Security Policy
 
-## Supported Use
+## Supported use
 
-This repository is a template. Security issues usually fall into one of these
-categories:
+This repository holds the Angels Auto Repair website, brand files, and project
+docs. Security issues usually fall into one of these categories:
 
 - unsafe workflow permissions
 - missing security controls

@@ -14,3 +14,13 @@ dist/
 build/
 *.egg-info/
 *.log
+node_modules/
+.vercel/
+.output/
+.nitro/
+screenshots/
+.grok/
+attachments/
+*.mov
+.DS_Store
+

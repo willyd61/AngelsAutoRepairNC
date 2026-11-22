@@ -1,7 +1,7 @@
 # Governance
 
-This template defines the starting governance model for new Lipford-Dutch
-repositories.
+Angels Auto Repair uses the Lipford GoC governance baseline, specialized for
+this shop.
 
 ## Ownership
 

@@ -1,38 +1,39 @@
 # AGENTS.md
 
-These instructions apply to automated coding agents working in repositories
-created from this template.
+Instructions for automated coding agents in this repository.
 
-## Operating Principles
+## Read this first
 
-- Keep the repository product-neutral until a project explicitly specializes it.
-- Do not add secrets, credentials, customer data, or private environment values.
-- Prefer small, reviewable changes with tests or validation commands.
-- Preserve repository hygiene: documentation, CI, security, and release metadata
-  should evolve with code.
-- Use conventional commits for generated commit messages.
-- When adding automation, use least-privilege GitHub token permissions.
-- When adding docs, keep `mkdocs build --strict` passing.
+1. [docs/agent-handoff.md](docs/agent-handoff.md) is the session handoff.
+2. The final logo is `public/brand/angels-final.svg`. Do not invent a new mark.
+3. Regenerate print files from `branding/build_brand.py`. Do not hand-edit the
+   generated SVG if you can change the script instead.
+4. Customer copy stays specific. Photos before the wrench. Written estimate.
+   Two bays. No fake appointment slots. No surprise invoice.
 
-## Validation Baseline
+## GoC rules that still apply
 
-Run the applicable checks before opening a pull request:
+- No secrets, credentials, customer data, or private environment values.
+- Conventional commits.
+- Least-privilege workflow permissions. Do not weaken CodeQL, Dependabot, or
+  Pages to get a green check.
+- `mkdocs build --strict` must pass when docs change.
+- New architecture choices go in `docs/decisions/` using `templates/adr.md`.
+
+## Shop site
+
+The customer UI is the TanStack Start app (`src/routes`, `src/styles.css`,
+`src/data/site.ts`). GitHub Pages is the documentation site, not the shop.
+
+Do not put Open Graph tags in `src/routes/__root.tsx`. The deploy injector
+owns those tags. Identity for the share card is `src/lib/og/site.json` and
+`public/og.jpg`.
+
+## Validation
 
 ```bash
-python -m pip install -r requirements-docs.txt
+python branding/build_brand.py
+npm run typecheck
+npm run build
 mkdocs build --strict
 ```
-
-If pre-commit is installed:
-
-```bash
-pre-commit run --all-files
-```
-
-## Template Safety Rules
-
-- Do not hardcode organization secrets.
-- Do not add repository-specific app names, customer names, production URLs, or
-  credentials.
-- Do not disable security workflows to make a branch green.
-- Document accepted risks in `templates/security-exception.md` format.
